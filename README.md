@@ -89,7 +89,7 @@ Projeto desenvolvido para atividade acadêmica.
 
 |  |  |  |  |
 |---|---|---|---|
-| ![Screenshot 1](./assets/Tela1.png) | ![Screenshot 2](./assets/Tela2.png) | ![Screenshot 3](./assets/Tela3.png) | ![Screenshot 4](./assets/Tela4.png) |
+| ![Screenshot 1](./assets/tela1.png) | ![Screenshot 2](./assets/Tela2.png) | ![Screenshot 3](./assets/Tela3.png) | ![Screenshot 4](./assets/Tela4.png) |
 | ![Screenshot 5](./assets/Tela5.png) | ![Screenshot 6](./assets/Tela6.png) | ![Screenshot 7](./assets/Tela7.png) | ![Screenshot 8](./assets/Tela8.png) |
 
 ---
