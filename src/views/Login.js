@@ -1,4 +1,4 @@
-import { View, StyleSheet, ScrollView } from "react-native";
+import { View, StyleSheet, ScrollView, Alert } from "react-native";
 import { useState } from "react";
 
 import { Input } from "../components/Input";
@@ -12,20 +12,24 @@ export default function Login({ navigation }) {
 
   // usuário fixo
   const USER = {
-    email: "waldemiro@gmail.com",
-    senha: "1234567",
+    email: "admin123@gmail.com",
+    senha: "admin123",
   };
 
   function handleLogin() {
     if (email === USER.email && senha === USER.senha) {
       navigation.replace("Home"); // 👈 vai pra Home
     } else {
-      alert("Email ou senha incorretos, tente novamente.");
+      Alert.alert("Erro", "Email ou senha incorretos, tente novamente.");
     }
   }
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <ScrollView
+      contentContainerStyle={styles.container}
+      keyboardShouldPersistTaps="handled"
+      automaticallyAdjustKeyboardInsets
+    >
       
       <Logo style={styles.logo} />
 
@@ -36,6 +40,7 @@ export default function Login({ navigation }) {
           placeholder="E-mail"
           value={email}
           onChangeText={setEmail}
+          keyboardType="email-address"
           style={styles.input}
         />
 
@@ -71,7 +76,8 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    width: 357,
+    width: "100%",
+    maxWidth: 357,
     height: 56,
     borderRadius: 50,
     alignSelf: "center",

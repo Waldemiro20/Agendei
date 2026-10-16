@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     Title: {
         fontSize: 30,
         color: "#5CC6BA",
-        marginHorizontal: 135,
+        textAlign: "center",
         marginVertical: 20,
     },
 

@@ -50,6 +50,7 @@ export default function DadosServicos() {
     <View style={styles.screen}>
       <ScrollView
         keyboardShouldPersistTaps="handled"
+        automaticallyAdjustKeyboardInsets
         contentContainerStyle={styles.scrollContent}
       >
         <ButtonSeta targetScreen="Home" />
@@ -113,13 +114,13 @@ const styles = StyleSheet.create({
   Explore:{
     color: "#5cc6ba",
     fontSize: 35,
-    marginHorizontal: 150,
+    textAlign: "center",
     marginTop: 30,    
   },
 
   TextMedico:{
     fontSize: 25,
-    marginHorizontal: 165,
+    textAlign: "center",
     marginTop: 10,
 
   },

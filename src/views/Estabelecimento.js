@@ -108,13 +108,12 @@ const styles = StyleSheet.create({
     },
     image: {
         width: "100%",
-        height: 250,
-        marginTop: -20
+        height: 250
     },
     buttonContainer: {
         position: "absolute",
-        top: 20,
-        left: 20,
+        top: 0,
+        left: 0,
         zIndex: 10
     },
     infoContainer: {

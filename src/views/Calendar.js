@@ -1,6 +1,5 @@
 import React from "react";
 import { View, Text, StyleSheet, ScrollView, Image } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Divider } from "../components/Divider";
 import { Button } from "../components/Button";
 import { TabBar } from "../components/TabBar";
@@ -35,15 +34,10 @@ function LinhaComIcone({ imageKey, children, alignTop, containerStyle }) {
 }
 
 export default function Calendar() {
-  const insets = useSafeAreaInsets();
-
   return (
     <View style={styles.screen}>
       <View
-        style={[
-          styles.buttonSetaContainer,
-          { top: Math.max(insets.top, 12) + 4 },
-        ]}
+        style={styles.buttonSetaContainer}
         pointerEvents="box-none"
       >
         <ButtonSeta
@@ -144,8 +138,8 @@ const styles = StyleSheet.create({
 
   buttonSetaContainer: {
     position: "absolute",
+    top: 16,
     left: 0,
-    right: 0,
     zIndex: 999,
     elevation: 10,
   },
@@ -162,7 +156,7 @@ const styles = StyleSheet.create({
   titlePrincipal: {
     fontSize: 30,
     color: "#5CC6BA",
-    marginHorizontal: 100,
+    textAlign: "center",
     marginTop: 45,
     marginBottom: 20,
   },
@@ -237,8 +231,8 @@ const styles = StyleSheet.create({
   },
 
   buttonText: {
-    fontSize: 22,
-    lineHeight: 18,
+    fontSize: 20,
+    lineHeight: 26,
   },
 
   LineB: {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { View, Image, TouchableOpacity, FlatList, StyleSheet, ScrollView, Text } from "react-native";
+import { View, Image, TouchableOpacity, StyleSheet, ScrollView, Text } from "react-native";
 import { services } from "../data/services";
 import { TabBar } from "../components/TabBar";
 import { Logo } from "../components/Logo";
@@ -16,7 +16,11 @@ export default function Home() {
 
   return (
     <View style={styles.screen}>
-      <ScrollView contentContainerStyle={styles.scrollContent}>
+      <ScrollView
+        contentContainerStyle={styles.scrollContent}
+        keyboardShouldPersistTaps="handled"
+        automaticallyAdjustKeyboardInsets
+      >
         <View style={styles.Logo}>
           <Logo />
         </View>
@@ -39,13 +43,10 @@ export default function Home() {
           </View>
         </View>
 
-        <FlatList
-          data={filteredServices}
-          numColumns={3}
-          keyExtractor={(item) => item.id}
-          contentContainerStyle={styles.container}
-          renderItem={({ item }) => (
+        <View style={styles.container}>
+          {filteredServices.map((item) => (
             <TouchableOpacity
+              key={item.id}
               style={styles.item}
               onPress={() => navigation.navigate("DadosServicos", { service: item })}
             >
@@ -55,8 +56,8 @@ export default function Home() {
 
               <Text style={styles.text}>{item.name}</Text>
             </TouchableOpacity>
-          )}
-        />
+          ))}
+        </View>
       </ScrollView>
 
       <View style={styles.footer}>
@@ -78,8 +79,10 @@ const styles = StyleSheet.create({
   },
 
   container: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
     paddingVertical: 24,
-    alignItems: "center",
     paddingBottom: 20,
   },
 
@@ -92,7 +95,7 @@ const styles = StyleSheet.create({
     color: "#000000",
     marginTop: 20,
     marginBottom: 20,
-    marginHorizontal: 50,
+    textAlign: "center",
 
   },
 

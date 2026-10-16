@@ -73,6 +73,10 @@ npm install
 npx expo start
 ```
 
+Instale o app **Expo Go** no celular (App Store / Play Store) e leia o QR Code que aparece no terminal
+(no iPhone, use a câmera nativa). O celular e o computador precisam estar na mesma rede Wi-Fi —
+se não conectar, use `npx expo start --tunnel`.
+
 ---
 
 ## 👨‍💻 Equipe de desenvolvedores

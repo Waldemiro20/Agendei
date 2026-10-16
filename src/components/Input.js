@@ -8,6 +8,9 @@ export const Input = React.forwardRef(function Input(
     placeholder,
     backgroundColor = "#E9E9E9",
     secureTextEntry,
+    keyboardType,
+    autoCapitalize = "none",
+    autoCorrect = false,
     style,
   },
   ref
@@ -21,13 +24,18 @@ export const Input = React.forwardRef(function Input(
       placeholder={placeholder}
       placeholderTextColor="#000000"
       secureTextEntry={secureTextEntry}
+      keyboardType={keyboardType}
+      autoCapitalize={autoCapitalize}
+      autoCorrect={autoCorrect}
     />
   );
 });
 
 const styles = StyleSheet.create({
   input: {
-    width: 357,
+    width: "100%",
+    maxWidth: 357,
+    alignSelf: "center",
     padding: 14,
     height: 56,
     borderRadius: 25,

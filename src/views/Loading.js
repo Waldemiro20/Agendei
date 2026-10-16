@@ -1,14 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Image, ActivityIndicator } from 'react-native';
+import { StyleSheet, View, Image, ActivityIndicator, Alert } from 'react-native';
 import { useEffect } from 'react';
 import NetInfo from '@react-native-community/netinfo';
 
 export default function Loading({ navigation }) {
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       checkInternet();
     }, 2000);
+    return () => clearTimeout(timer);
   }, []);
 
   function checkInternet() {
@@ -16,7 +17,9 @@ export default function Loading({ navigation }) {
       if (state.isConnected) {
         navigation.replace('Login'); // 👈 agora funciona
       } else {
-        alert('Sem internet, verifique sua conexão.');
+        Alert.alert('Sem internet', 'Verifique sua conexão.', [
+          { text: 'Tentar novamente', onPress: checkInternet },
+        ]);
       }
     });
   }
@@ -27,7 +30,7 @@ export default function Loading({ navigation }) {
 
       <ActivityIndicator size="large" color="#fff" style={{ marginTop: 30 }} />
 
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
     </View>
   );
 }

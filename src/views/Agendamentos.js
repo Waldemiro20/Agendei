@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
 
   buttonContainer: {
     position: "absolute",
-    top: 40,
+    top: 10,
     left: 10,
     zIndex: 999,
     elevation: 10,
@@ -192,7 +192,8 @@ const styles = StyleSheet.create({
   },
 
   buttonReserva: {
-    width: 350,
+    width: "90%",
+    maxWidth: 350,
     height: 50,
     borderRadius: 11,
     backgroundColor: "#5CC6BA",
